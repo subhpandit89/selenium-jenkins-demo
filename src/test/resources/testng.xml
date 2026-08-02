@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Enterprise Automation Suite">
+
+    <!-- Register the ReportPortal Observer Listener -->
+    <listeners>
+        <listener class-name="com.epam.reportportal.testng.ReportPortalTestNGListener" />
+    </listeners>
+
+    <test name="Chrome Functional Validations">
+        <classes>
+            <class name="com.automationexcellence.SampleTest" />
+        </classes>
+    </test>
+</suite>

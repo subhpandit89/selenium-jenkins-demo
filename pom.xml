@@ -28,8 +28,7 @@
     </dependency>
     <dependency>
       <groupId>org.seleniumhq.selenium</groupId>
-      <artifactId>
-    selenium-java</artifactId>
+      <artifactId>selenium-java</artifactId>
       <version>4.18.1</version>
     </dependency>
 
@@ -38,6 +37,31 @@
       <groupId>org.testng</groupId>
       <artifactId>testng</artifactId>
       <version>7.9.0</version>
+    </dependency>
+    <!-- The Coding Interface: SLF4J -->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>2.0.13</version>
+    </dependency>
+
+    <!-- The Core Logging Engine: Logback -->
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>1.5.16</version>
+    </dependency>
+    <dependency>
+      <groupId>com.epam.reportportal</groupId>
+      <artifactId>agent-java-testng</artifactId>
+      <version>5.6.8</version> <!-- Or your preferred version -->
+    </dependency>
+    <!-- The Observer Bridge: ReportPortal Logback Appender -->
+    <dependency>
+      <groupId>com.epam.reportportal</groupId>
+      <artifactId>logger-java-logback</artifactId>
+      <version>5.2.1</version>
+      <scope>test</scope>
     </dependency>
   </dependencies>
 

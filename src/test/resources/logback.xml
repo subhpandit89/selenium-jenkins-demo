@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <!-- ROUTE A: Standard Console Output (For local debugging / CI terminal) -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- ROUTE B: Real-Time Stream to ReportPortal Dashboard -->
+    <appender name="ReportPortalAppender"
+        class="com.epam.reportportal.logback.appender.ReportPortalAppender">
+        <encoder>
+            <!-- ReportPortal wraps logs natively, a simpler pattern optimizes execution speed -->
+            <pattern>%d{HH:mm:ss.SSS} [%t] %-5level - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Log Levels Governance: Reduce noise from external libraries -->
+    <logger name="org.openqa.selenium" level="WARN" />
+    <logger name="org.apache.http" level="WARN" />
+
+    <!-- Root Context Configuration -->
+    <root level="INFO">
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="ReportPortalAppender" />
+    </root>
+</configuration>
