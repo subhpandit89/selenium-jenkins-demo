@@ -26,7 +26,7 @@ public class SampleTest {
     
     WebDriver driver;
 
-    @BeforeSuite
+    @BeforeSuite(alwaysRun=true)
     public void suiteLevelSetup(){
         ExtentReportManager.createExtentReport();
     }
