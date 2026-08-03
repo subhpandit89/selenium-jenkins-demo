@@ -4,8 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.reporter.ExtentSparkReporter;
-import com.aventstack.extentreports.reporter.configuration.Theme;
+import com.aventstack.extentreports.reporter.JsonFormatter;
 
 public final class ExtentReportManager {
     
@@ -20,13 +19,13 @@ public final class ExtentReportManager {
                     String userDirectory = System.getProperty("user.dir");
                     String dateFormatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss").format(new Date());
 
-                    ExtentSparkReporter reporter = new ExtentSparkReporter(userDirectory + "/extentReports/Reports_" + dateFormatter + ".html");
-                    reporter.config().setDocumentTitle("Regression and Smoke Reports");
-                    reporter.config().setReportName("Automation Suite Execution");
-                    reporter.config().setTheme(Theme.DARK);
+                    JsonFormatter jsonFomatter = new JsonFormatter(userDirectory + "/extentReports/Reports_" + dateFormatter + ".html");
+                    // jsonFomatter..setDocumentTitle("Regression and Smoke Reports");
+                    // reporter.config().setReportName("Automation Suite Execution");
+                    // reporter.config().setTheme(Theme.DARK);
 
                     report = new ExtentReports();
-                    report.attachReporter(reporter);
+                    report.attachReporter(jsonFomatter);
                     report.setSystemInfo("OS", "Windows");
                     report.setSystemInfo("Browser", "Chrome");
                     report.setSystemInfo("Suite", "Smoke & Regression");
