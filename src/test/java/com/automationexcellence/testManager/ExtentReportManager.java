@@ -19,7 +19,7 @@ public final class ExtentReportManager {
                     String userDirectory = System.getProperty("user.dir");
                     String dateFormatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss").format(new Date());
 
-                    JsonFormatter jsonFomatter = new JsonFormatter(userDirectory + "/extentReports/Reports_" + dateFormatter + ".html");
+                    JsonFormatter jsonFomatter = new JsonFormatter(userDirectory + "/extentReports/Reports_" + dateFormatter + ".json");
                     // jsonFomatter..setDocumentTitle("Regression and Smoke Reports");
                     // reporter.config().setReportName("Automation Suite Execution");
                     // reporter.config().setTheme(Theme.DARK);
